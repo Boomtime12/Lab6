@@ -35,6 +35,26 @@ def encode(password):
         new_pass += str((int(char) + 3) % 10)
     return new_pass
 
+def decode(password):
+    decoded = ""
+    i = 0
+    while i < len(password):
+        if password[i] == "9":
+            decoded += "6"
+        if password[i] == "8":
+            decoded += "5"
+        if password[i] == "7":
+            decoded += "4"
+        if password[i] == "6":
+            decoded += "3"
+        if password[i] == "5":
+            decoded += "2"
+        if password[i] == "4":
+            decoded += "1"
+        if password[i] == "3":
+            decoded += "0"
+        i += 1
+    return decoded
 
 if __name__ == "__main__":
     main()
